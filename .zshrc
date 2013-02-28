@@ -1,4 +1,11 @@
 # users generic .zshrc file for zsh(1)
+# PROMPT
+autoload colors
+colors
+PROMPT="[%n@%m]%{${fg[green]}%}%~%{${reset_color}%}
+$ "
+
+PROMPT2='> ' 
 
 
 ## Environment variable configuration
@@ -11,71 +18,53 @@ export LESSCHARSET=utf-8
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
 setopt prompt_subst
 
-# 指定したコマンド名がなく、ディレクトリ名と一致した場合 cd する
+### 移動 ###
+# つまりディレクトリ名でcd
 setopt auto_cd
-
 # cd でTabを押すとdir list を表示
 setopt auto_pushd
-
 # ディレクトリスタックに同じディレクトリを追加しないようになる
 #setopt pushd_ignore_dups
+# シンボリックリンクは実体を追うようになる
+#setopt chase_links
 
+### スペルチェック ###
 # コマンドのスペルチェックをする
 setopt correct
-
 # コマンドライン全てのスペルチェックをする
 setopt correct_all
 
 # 上書きリダイレクトの禁止
 #setopt no_clobber
 
+### 補完 ###
 # 補完候補リストを詰めて表示
 setopt list_packed
-
 # auto_list の補完候補一覧で、ls -F のようにファイルの種別をマーク表示
 setopt list_types
-
 # 補完候補が複数ある時に、一覧表示する
 setopt auto_list
-
 # コマンドラインの引数で --prefix=/usr などの = 以降でも補完できる
 setopt magic_equal_subst
-
 # カッコの対応などを自動的に補完する
 setopt auto_param_keys
-
 # ディレクトリ名の補完で末尾の / を自動的に付加し、次の補完に備える
 setopt auto_param_slash
-
-# {a-c} を a b c に展開する機能を使えるようにする
-#setopt brace_ccl
-
-# シンボリックリンクは実体を追うようになる
-#setopt chase_links
-
 # 補完キー（Tab,  Ctrl+I) を連打するだけで順に補完候補を自動で補完する
 setopt auto_menu
-
 # sudoも補完の対象
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
-
 # 色付きで補完する
 zstyle ':completion:*' list-colors di=34 fi=0
 #zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# 最後がディレクトリ名で終わっている場合末尾の / を自動的に取り除かない
+#setopt noautoremoveslash
 
 # 複数のリダイレクトやパイプなど、必要に応じて tee や cat の機能が使われる
 setopt multios
 
-# 最後がディレクトリ名で終わっている場合末尾の / を自動的に取り除かない
-setopt noautoremoveslash
-
 # beepを鳴らさないようにする
 setopt nolistbeep
-
-# Match without pattern
-# ex. > rm *~398
-# remove * without a file "398". For test, use "echo *~398"
-#setopt extended_glob
 
 ## Keybind configuration
 #
@@ -210,7 +199,7 @@ autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
 
 # 勝手にpushd
-setopt autopushd
+#setopt autopushd
 
 # エラーメッセージ本文出力に色付け
 e_normal=`echo -e "¥033[0;30m"`
@@ -228,13 +217,12 @@ function cwaf() {
 #
 fpath=(~/.zsh/functions/Completion ${fpath})
 autoload -U compinit
-compinit -u
-
+compinit
+#compinit -u
 
 ## zsh editor
 #
 autoload zed
-
 
 ## Prediction configuration
 #
@@ -243,7 +231,6 @@ autoload predict-on
 
 ## Command Line Stack [Esc]-[q]
 bindkey -a 'q' push-line
-
 
 ## Alias configuration
 #
@@ -255,7 +242,7 @@ alias where="command -v"
 
 case "${OSTYPE}" in
 freebsd*|darwin*)
-    alias ll="ls -lG"
+    alias ll="ls -l"
     zle -N expand-to-home-or-insert
     bindkey "@"  expand-to-home-or-insert
     ;;
@@ -338,8 +325,6 @@ dumb)
     echo "Welcome Emacs Shell"
     ;;
 esac
-
-
 
 export EDITOR=vim
 export PATH=$PATH:$HOME/local/bin:/usr/local/git/bin
