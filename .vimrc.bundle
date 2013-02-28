@@ -221,7 +221,7 @@ Bundle 'thinca/vim-ref'
 "Bundle 'The-NERD-tree'
 
 " vtreeexplorer.vim : ツリー状にファイルやディレクトリの一覧を表示
-Bundle 'vtreeexplorer'
+"Bundle 'vtreeexplorer'
 " }}}
 
 
