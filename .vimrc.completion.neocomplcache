@@ -41,10 +41,10 @@ let g:neocomplcache_dictionary_filetype_lists = {
     \ }
 
 " Define keyword.
-if !exists('g:neocomplcache_keyword_patterns')
-    let g:neocomplcache_keyword_patterns = {}
-endif
-let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+"if !exists('g:neocomplcache_keyword_patterns')
+"    let g:neocomplcache_keyword_patterns = {}
+"endif
+"let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
 " ユーザー定義スニペット保存ディレクトリ
 let g:neocomplcache_snippets_dir = $HOME.'/.vim/snippets'
@@ -54,9 +54,9 @@ imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
 " 補完を選択しpopupを閉じる
-" inoremap <expr><C-y> neocomplcache#close_popup()
+inoremap <expr><C-y> neocomplcache#close_popup()
 " 補完をキャンセルしpopupを閉じる
-" inoremap <expr><C-e> neocomplcache#cancel_popup()
+inoremap <expr><C-e> neocomplcache#cancel_popup()
 " TABで補完できるようにする
 "inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " undo
@@ -64,7 +64,7 @@ smap <C-k> <Plug>(neocomplcache_snippets_expand)
 " 補完候補の共通部分までを補完する
 inoremap <expr><C-s> neocomplcache#complete_common_string()
 " SuperTab like snippets behavior.
-"imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 " C-kを押すと行末まで削除
 " inoremap <C-k> <C-o>D
 " C-nでneocomplcache補完
@@ -122,7 +122,7 @@ let g:neocomplcache_include_patterns = {
   \ 'cpp' : '^\s*#\s*include',
   \ 'ruby' : '^\s*require',
   \ 'perl' : '^\s*use',
-  \ 'php' : '^_s*use',
+  \ 'php' : '^\s*use',
   \ }
 "インクルード先のファイル名の解析パターン
 let g:neocomplcache_include_exprs = {

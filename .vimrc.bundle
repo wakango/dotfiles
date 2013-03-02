@@ -149,6 +149,8 @@ Bundle 'camelcasemotion'
 
 " perldocやphpmanual等のリファレンスをvim上で見る
 Bundle 'thinca/vim-ref'
+" ruby用追加辞書
+Bundle 'taka84u9/vim-ref-ri'
 
 " SQLUtilities : SQL整形、生成ユーティリティ
 "Bundle 'SQLUtilities'

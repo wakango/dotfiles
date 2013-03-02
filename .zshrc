@@ -109,18 +109,6 @@ setopt hist_no_store
 # サスペンド中のプロセスと同じコマンド名を実行した場合はリジュームする
 #setopt auto_resume
 
-# =command を command のパス名に展開する
-#setopt equals
-
-# ファイル名で #, ~, ^ の 3 文字を正規表現として扱う
-#setopt extended_glob
-
-# zsh の開始・終了時刻をヒストリファイルに書き込む
-#setopt extended_history
-
-# Ctrl+S/Ctrl+Q によるフロー制御を使わないようにする
-#setopt NO_flow_control
-
 # 各コマンドが実行されるときにパスをハッシュに入れる
 #setopt hash_cmds
 
@@ -132,9 +120,6 @@ setopt hist_no_store
 
 # シェルが終了しても裏ジョブに HUP シグナルを送らないようにする
 #setopt NO_hup
-
-# Ctrl+D では終了しないようになる（exit, logout などを使う）
-setopt ignore_eof
 
 # コマンドラインでも # 以降をコメントと見なす
 #setopt interactive_comments
@@ -158,16 +143,10 @@ setopt path_dirs
 #setopt pushd_to_home
 
 # rm * などの際、本当に全てのファイルを消して良いかの確認しないようになる
-#setopt rm_star_silent
-
-# rm_star_silent の逆で、10 秒間反応しなくなり、頭を冷ます時間が与えられる
-#setopt rm_star_wait
+setopt rm_star_silent
 
 # for, repeat, select, if, function などで簡略文法が使えるようになる
 #setopt short_loops
-
-# デフォルトの複数行コマンドライン編集ではなく、１行編集モードになる
-#setopt single_line_zle
 
 # コマンドラインがどのように展開され実行されたかを表示するようになる
 #setopt xtrace
@@ -306,13 +285,6 @@ cons25)
     ;;
 
 kterm*|xterm*)
-   # Terminal.app
-#    precmd() {
-#        echo -ne "\033]0;${USER}@${HOST%%.*}:${PWD}\007"
-#    }
-    # export LSCOLORS=exfxcxdxbxegedabagacad
-    # export LSCOLORS=gxfxcxdxbxegedabagacad
-    # export LS_COLORS='di=1;34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30'
 
     export CLICOLOR=1
     export LSCOLORS=ExFxCxDxBxegedabagacad
