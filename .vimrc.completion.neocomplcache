@@ -134,11 +134,6 @@ let g:neocomplcache_include_suffixes = {
   \ 'haskell' : '.hs'
   \ }
 
-" for rsense
-if !exists('g:neocomplcache_omni_patterns')
-  let g:neocomplcache_omni_patterns = {}
-endif
-let g:rsenseUseOmniFunc = 1
-let g:rsenseHome = expand('~/src/rsense-0.3')
-
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+" for neocomplcache-rsense
+" $RSENSE_HOME
+let g:neocomplcache#sources#rsense#home_directory = expand('~/.vim/bundle/rsense-0.3')

@@ -102,6 +102,10 @@ Bundle 'Shougo/neocomplcache'
 "Bundle 'Shougo/neocomplcache-snippets-complete'
 Bundle 'Shougo/neosnippet'
 
+" neocomplcache-rsense
+Bundle 'Shougo/neocomplcache-rsense'
+Bundle 'taichouchou2/rsense-0.3'
+
 " for rsense
 "Bundle 'm2ym/rsense'
 "Bundle 'taichouchou2/vim-rsense'
