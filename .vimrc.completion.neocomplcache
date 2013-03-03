@@ -41,10 +41,10 @@ let g:neocomplcache_dictionary_filetype_lists = {
     \ }
 
 " Define keyword.
-"if !exists('g:neocomplcache_keyword_patterns')
-"    let g:neocomplcache_keyword_patterns = {}
-"endif
-"let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+if !exists('g:neocomplcache_keyword_patterns')
+    let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
 " ユーザー定義スニペット保存ディレクトリ
 let g:neocomplcache_snippets_dir = $HOME.'/.vim/snippets'
@@ -64,7 +64,7 @@ inoremap <expr><C-e> neocomplcache#cancel_popup()
 " 補完候補の共通部分までを補完する
 inoremap <expr><C-s> neocomplcache#complete_common_string()
 " SuperTab like snippets behavior.
-imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+"imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 " C-kを押すと行末まで削除
 " inoremap <C-k> <C-o>D
 " C-nでneocomplcache補完

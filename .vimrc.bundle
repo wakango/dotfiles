@@ -182,6 +182,10 @@ Bundle 'taka84u9/vim-ref-ri'
 " }}}
 
 " Syntax {{{
+
+" ruby
+Bundle 'vim-ruby/vim-ruby'
+
 " haml
 "Bundle 'haml.zip'
 
