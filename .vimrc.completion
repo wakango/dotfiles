@@ -20,6 +20,5 @@ source ~/dotfiles/.vimrc.completion.neocomplcache
 " source ~/dotfiles/.vimrc.completion.autocomplpop
 
 " RSense設定
-let g:rsenseHome = expand('~/dotfiles/.vim/bundle/rsense-0.3')
-
-
+let g:rsenseHome = expand("~/dotfiles/.vim/bundle/rsense")
+let g:rsenseUseOmniFunc = 1
