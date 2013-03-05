@@ -68,8 +68,8 @@ alias poff='predict-off'
 alias p='ping -c 4'
 
 #alias ls='ls -al'
-alias cp='nocorrect cp -irp'
-alias refe='nocorrect refe'
+#alias cp='nocorrect cp -irp'
+#alias refe='nocorrect refe'
 
 # git
 alias g='git'
@@ -81,12 +81,12 @@ alias gc='git commit'
 alias gci='git commit -a'
 alias '偽ｔ'=git
 
-alias java='nocorrect java'
-alias cp='nocorrect cp -irp'
-alias erl='nocorrect erl'
-alias sbcl='nocorrect sbcl'
-alias gosh='nocorrect gosh'
-alias node='nocorrect node'
+#alias java='nocorrect java'
+#alias cp='nocorrect cp -irp'
+#alias erl='nocorrect erl'
+#alias sbcl='nocorrect sbcl'
+#alias gosh='nocorrect gosh'
+#alias node='nocorrect node'
 # alias hg='nocorrect hg --encoding=utf-8'
 
 # scala

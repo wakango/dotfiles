@@ -19,4 +19,7 @@ source ~/dotfiles/.vimrc.completion.neocomplcache
 " 補完にAutoComplPopを使う
 " source ~/dotfiles/.vimrc.completion.autocomplpop
 
+" RSense設定
+let g:rsenseHome = expand('~/dotfiles/.vim/bundle/rsense-0.3')
+
 
