@@ -161,8 +161,6 @@ nnoremap <silent> [unite]m  :<C-u>Unite -no-split file_mru<CR>
 " 現在のバッファのカレントディレクトリからファイル一覧
 nnoremap <silent> [unite]d  :<C-u>UniteWithBufferDir -no-split file<CR>
 
-" nnoremap <silent> [unite]b  :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
-
 let g:yankring_zap_keys = ""
 " from basyura/unite-rails
 nnoremap <silent> [unite]rm  :<C-u>Unite -no-split rails/model<CR>
@@ -230,10 +228,6 @@ function! RSpecQuickrun()
   let b:quickrun_config = {'type' : 'rspec/bundle'}
 endfunction
 autocmd BufReadPost *_spec.rb call RSpecQuickrun()
-"------------------------------------
-" Pydiction
-"------------------------------------
-"let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 
 "------------------------------------
 " Syntastic
@@ -277,9 +271,10 @@ let g:syntastic_enable_highlighting = 1
 "endfunction
 "autocmd User Rails call SetUpRailsSetting()
 
-
-"------------------------------------
-" mattn/vim-metarw-redmine
-"------------------------------------
-"let g:metarw_redmine_server = 'http://redmine.dev.scaleout.jp'
-"let g:metarw_redmine_apikey = '2ed945f405865ec799ff91b7bb364215f932c51c'
+" rsense
+"let g:rsenseUseOmniFunc = 1
+let g:rsenseHome = expand('~/dotfiles/.vim/bundle/rsense-0.3')
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'

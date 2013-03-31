@@ -115,4 +115,4 @@ let g:neocomplcache_include_suffixes = {
 
 " for neocomplcache-rsense
 " $RSENSE_HOME
-let g:neocomplcache#sources#rsense#home_directory = expand("~/.vim/bundle/rsense")
+"let g:neocomplcache#sources#rsense#home_directory = expand("~/.vim/bundle/rsense-0.3")

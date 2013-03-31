@@ -92,27 +92,20 @@ Bundle 'scrooloose/nerdcommenter.git'
 " }}}
 
 " Completion {{{
-" 補完 autocomplpop.vim : insertmodeで自動で補完をpopup
-" Bundle 'AutoComplPop'
-
 " 補完 neocomplcache.vim : 究極のVim的補完環境
 Bundle 'Shougo/neocomplcache'
-
 " neocomplcacheのsinpet補完
-"Bundle 'Shougo/neocomplcache-snippets-complete'
 Bundle 'Shougo/neosnippet'
 
+"  ==== ruby ====
 " neocomplcache-rsense
 Bundle 'Shougo/neocomplcache-rsense'
-"Bundle 'taichouchou2/rsense-0.3'
-
-" for rsense
-Bundle 'm2ym/rsense'
-"Bundle 'taichouchou2/vim-rsense'
+" rsense
+Bundle 'taichouchou2/rsense-0.3'
+Bundle 'taichouchou2/vim-rsense'
 
 " rubyでrequire先を補完する
 " Bundle 'ujihisa/neco-ruby'
-
 " A neocomplcache plugin for English, using look command
 " Bundle 'ujihisa/neco-look'
 " }}}
@@ -120,15 +113,8 @@ Bundle 'm2ym/rsense'
 " Searching/Moving{{{
 " smooth_scroll.vim : スクロールを賢く
 Bundle 'Smooth-Scroll'
-
-" vim-smartword : 単語移動がスマートな感じで
-"Bundle 'smartword'
-
 " camelcasemotion : CamelCaseやsnake_case単位でのワード移動
 Bundle 'camelcasemotion'
-
-" <Leader><Leader>w/fなどで、motion先をhilightする
-"Bundle 'EasyMotion'
 
 " matchit.vim : 「%」による対応括弧へのカーソル移動機能を拡張
 "Bundle 'matchit.zip'
@@ -159,14 +145,8 @@ Bundle 'taka84u9/vim-ref-ri'
 " SQLUtilities : SQL整形、生成ユーティリティ
 "Bundle 'SQLUtilities'
 
-" vim-ruby : VimでRubyを扱う際の最も基本的な拡張機能
-"Bundle 'vim-ruby/vim-ruby'
-
 " rails.vim : rails的なアレ
 "Bundle 'tpope/vim-rails'
-
-" Pydiction : Python用の入力補完
-"Bundle 'Pydiction'
 
 " ソースコード上のメソッド宣言、変数宣言の一覧を表示
 "Bundle 'taglist.vim'
@@ -185,15 +165,14 @@ Bundle 'taka84u9/vim-ref-ri'
 
 " ruby
 Bundle 'vim-ruby/vim-ruby'
-
-" haml
-"Bundle 'haml.zip'
-
 " JavaScript
-"Bundle 'JavaScript-syntax'
-
+Bundle 'JavaScript-syntax'
 " jQuery
-"Bundle 'jQuery'
+Bundle 'jQuery'
+" syntax checking plugins exist for eruby, haml, html, javascript, php, python, ruby and sass.
+Bundle 'scrooloose/syntastic'
+" php
+Bundle 'StanAngeloff/php.vim'
 
 " nginx conf
 "Bundle 'nginx.vim'
@@ -216,27 +195,7 @@ Bundle 'vim-ruby/vim-ruby'
 " ghc-mod
 "Bundle 'eagletmt/ghcmod-vim'
 
-" syntax checking plugins exist for eruby, haml, html, javascript, php, python, ruby and sass.
-"Bundle 'scrooloose/syntastic'
-
-" php
-Bundle 'StanAngeloff/php.vim'
 " }}}
-
-" Buffer {{{
-" DumbBuf.vim : quickbufっぽくbufferを管理。 "<Leader>b<Space>でBufferList
-"Bundle 'DumbBuf'
-
-" minibufexpl.vim : タブエディタ風にバッファ管理ウィンドウを表示
-"Bundle 'minibufexpl.vim'
-
-" NERDTree : ツリー型エクスプローラ
-"Bundle 'The-NERD-tree'
-
-" vtreeexplorer.vim : ツリー状にファイルやディレクトリの一覧を表示
-"Bundle 'vtreeexplorer'
-" }}}
-
 
 " Encording {{{
 Bundle 'banyan/recognize_charcode.vim'
@@ -298,8 +257,6 @@ Bundle 'wincent/Command-T'
 
 " ColorSchema{{{{
 " color schema 256
-"Bundle 'desert256.vim'
-"Bundle 'mrkn256.vim'
 Bundle 'tomasr/molokai'
 "Bundle 'yuroyoro/yuroyoro256.vim'
 " }}}
