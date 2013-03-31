@@ -271,8 +271,10 @@ let g:syntastic_enable_highlighting = 1
 "endfunction
 "autocmd User Rails call SetUpRailsSetting()
 
+" -----------------------------------
 " rsense
-"let g:rsenseUseOmniFunc = 1
+" -----------------------------------
+let g:rsenseUseOmniFunc = 1
 let g:rsenseHome = expand('~/dotfiles/.vim/bundle/rsense-0.3')
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}

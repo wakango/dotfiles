@@ -12,7 +12,7 @@ let g:neocomplcache_enable_smart_case = 1
 " camle caseを有効化。大文字を区切りとしたワイルドカードのように振る舞う
 let g:neocomplcache_enable_camel_case_completion = 1
 " _(アンダーバー)区切りの補完を有効化
-"let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
 " シンタックスをキャッシュするときの最小文字長を3に
 "let g:neocomplcache_min_syntax_length = 3
 " neocomplcacheを自動的にロックするバッファ名のパターン
@@ -61,18 +61,16 @@ inoremap <expr><C-e> neocomplcache#cancel_popup()
 inoremap <expr><C-g>     neocomplcache#undo_completion()
 " 補完候補の共通部分までを補完する
 inoremap <expr><C-s> neocomplcache#complete_common_string()
-" SuperTab like snippets behavior.
-"imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 " C-nでneocomplcache補完
 "inoremap <expr><C-n>  pumvisible() ? "\<C-n>" : "\<C-x>\<C-u>\<C-p>"
 " C-pでkeyword補完中
 "inoremap <expr><C-p> pumvisible() ? "\<C-p>" : "\<C-p>\<C-n>"
 
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-" vimファイルを開いているときに<C-x><C-o>でvimキーワード補完
-inoremap <expr><C-x><C-o> &filetype == 'vim' ? "\<C-x><C-v><C-p>" : neocomplcache#manual_omni_complete()
+"" <C-h>, <BS>: close popup and delete backword char.
+"inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+"inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+"" vimファイルを開いているときに<C-x><C-o>でvimキーワード補完
+"inoremap <expr><C-x><C-o> &filetype == 'vim' ? "\<C-x><C-v><C-p>" : neocomplcache#manual_omni_complete()
 
 " buffer開いたらneoconでcache
 autocmd BufReadPost,BufEnter,BufWritePost :NeoComplCacheCachingBuffer <buffer>
@@ -111,8 +109,4 @@ let g:neocomplcache_include_exprs = {
 let g:neocomplcache_include_suffixes = {
   \ 'ruby' : '.rb',
   \ 'haskell' : '.hs'
-  \ }
-
-" for neocomplcache-rsense
-" $RSENSE_HOME
-"let g:neocomplcache#sources#rsense#home_directory = expand("~/.vim/bundle/rsense-0.3")
+ \ }

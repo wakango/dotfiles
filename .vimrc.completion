@@ -15,10 +15,3 @@ cnoremap <Down>  <C-n>
 
 " 補完にneocomplcacheを使う
 source ~/dotfiles/.vimrc.completion.neocomplcache
-
-" 補完にAutoComplPopを使う
-" source ~/dotfiles/.vimrc.completion.autocomplpop
-
-" RSense設定
-let g:rsenseHome = expand("~/dotfiles/.vim/bundle/rsense")
-let g:rsenseUseOmniFunc = 1
