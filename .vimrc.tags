@@ -2,12 +2,4 @@
 " タグ関連 Tags
 "-------------------------------------------------------------------------------
 " set tags
-if has("autochdir")
-  " 編集しているファイルのディレクトリに自動で移動
-  set autochdir
-  set tags=tags;
-else
-  set tags=./tags,./../tags,./*/tags,./../../tags,./../../../tags,./../../../../tags,./../../../../../tags
-endif
-
-"set notagbsearch
+autocmd FileType ruby,eruby,noeruby set tags+=$HOME/tags/gtags,$HOME/tags/rtags

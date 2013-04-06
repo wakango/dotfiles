@@ -151,7 +151,7 @@ nnoremap <silent> [unite]a  :<C-u>UniteWithCurrentDir -no-split -buffer-name=fil
 " ファイル一覧
 nnoremap <silent> [unite]f  :<C-u>Unite -no-split -buffer-name=files file<CR>
 " ファイル一覧 リカーシブ
-nnoremap <silent> [unite]r  :<C-u>Unite -no-split -buffer-name=files file_rec<CR>
+"nnoremap <silent> [unite]r  :<C-u>Unite -no-split -buffer-name=files file_rec<CR>
 " バッファ一覧
 nnoremap <silent> [unite]b  :<C-u>Unite -no-split buffer<CR>
 " 常用セット
@@ -200,7 +200,7 @@ endfunction "}}}
 let g:unite_source_file_mru_limit = 200
 
 " unite-plugins
-cnoremap UH Unite help<Enter>
+nnoremap <silent> [unite]h :<C-u>Unite help<CR>
 " Unite-outline
 nnoremap <C-o> :<C-u>Unite outline<CR>
 nnoremap / :<C-u>Unite line<CR>

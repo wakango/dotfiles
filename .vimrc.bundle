@@ -3,11 +3,11 @@
 set nocompatible
 filetype plugin indent off
 if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#rc(expand('~/.vim/bundle/'))
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#rc(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
+"helptags ~/.vim/bundle/neobundle.vim/doc
 
 " ========== Edit ==========
 " NERD_commenter.vim :最強コメント処理 (<Leader>c<space>でコメントをトグル)
@@ -73,21 +73,22 @@ NeoBundle 'Shougo/neosnippet'
 "  ==== ruby ====
 " neocomplcache-rsense
 NeoBundleLazy 'Shougo/neocomplcache-rsense', {
-      \ 'autoload' : {'filetypes': ['ruby']}
+      \ 'autoload' : {'filetypes': ['ruby', 'eruby']}
       \}
 " rsense
 NeoBundleLazy 'taichouchou2/rsense-0.3', {
-      \ 'autoload' : {'filetypes': ['ruby']}
+      \ 'autoload' : {'filetypes': ['ruby', 'eruby']}
       \}
 NeoBundleLazy 'taichouchou2/vim-rsense', {
-      \ 'autoload' : {'filetypes': ['ruby']}
+      \ 'autoload' : {'filetypes': ['ruby', 'eruby']}
       \}
 " rubyでrequire先を補完する
 " NeoBundle 'ujihisa/neco-ruby'
 " A neocomplcache plugin for English, using look command
 " NeoBundle 'ujihisa/neco-look'
-" }}}
-" Searching/Moving{{{
+
+
+" ========== Searching/Moving ==========
 " smooth_scroll.vim : スクロールを賢く
 NeoBundle 'Smooth-Scroll'
 " camelcasemotion : CamelCaseやsnake_case単位でのワード移動
@@ -222,9 +223,12 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'tsukkee/unite-help'
 NeoBundle 'h1mesuke/unite-outline'
 " NeoBundle 'Sixeight/unite-grep'
-"NeoBundle 'basyura/unite-rails'
 "NeoBundle 'thinca/vim-unite-history'
 NeoBundle 'tsukkee/unite-tag'
 "NeoBundle 'choplin/unite-vim_hacks'
+
+" =========== ruby on rails ==========
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'basyura/unite-rails'
 
 filetype plugin indent on
