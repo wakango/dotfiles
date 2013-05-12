@@ -144,7 +144,11 @@ NeoBundleFetch 'Shougo/neobundle.vim'
   "NeoBundle 'ruby-matchit'
 
 " =========== ruby on rails ==========
-  NeoBundle 'tpope/vim-rails'
-  NeoBundle 'basyura/unite-rails'
+  NeoBundleLazy 'tpope/vim-rails', {
+        \ 'autoload' : {'filetypes': ['ruby', 'eruby', 'haml']}
+        \}
+  NeoBundleLazy 'basyura/unite-rails', {
+        \ 'autoload' : {'filetypes': ['ruby', 'eruby', 'haml']}
+        \}
 
 filetype plugin indent on
