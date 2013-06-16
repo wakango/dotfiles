@@ -151,4 +151,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
         \ 'autoload' : {'filetypes': ['ruby', 'eruby', 'haml']}
         \}
 
+" ======== my plugin ========
+  NeoBundle "mytask"
+
 filetype plugin indent on
