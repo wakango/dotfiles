@@ -161,9 +161,9 @@ nnoremap <silent> [unite]m  :<C-u>Unite -no-split file_mru<CR>
 " 現在のバッファのカレントディレクトリからファイル一覧
 nnoremap <silent> [unite]d  :<C-u>UniteWithBufferDir -no-split file<CR>
 " 現在のバッファのディレクトリに新規ファイルを作成
-noremap <silent> [unite]md :<C-u>UniteWithBufferDir file file/new -buffer-name=file<CR>
+noremap <silent> [unite]nd :<C-u>UniteWithBufferDir file file/new -buffer-name=file<CR>
 " カレントディレクトリに新規ファイルを作成
-noremap <silent> [unite]mf :<C-u>Unite file file/new -buffer-name=file<CR>
+noremap <silent> [unite]nf :<C-u>Unite file file/new -buffer-name=file<CR>
 
 let g:yankring_zap_keys = ""
 " from basyura/unite-rails
