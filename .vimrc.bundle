@@ -12,6 +12,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " ========== Edit ==========
   " NERD_commenter.vim :最強コメント処理 (<Leader>c<space>でコメントをトグル)
   NeoBundle 'scrooloose/nerdcommenter.git'
+  NeoBundle 'sudo.vim'
   " surround.vim : テキストを括弧で囲む／削除する
   "NeoBundle 'tpope/surround.vim'
   " smartchr.vim : ==などの前後を整形
@@ -61,7 +62,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
         \ 'autoload' : {'filetypes' : ['php']}
         \}
   " nginx conf
-  "NeoBundle 'nginx.vim'
+  NeoBundle 'nginx.vim'
   " markdown
   "NeoBundle 'tpope/vim-markdown'
   " coffee script
@@ -74,6 +75,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
   "NeoBundle 'jondistad/vimclojure'
   " ghc-mod
   "NeoBundle 'eagletmt/ghcmod-vim'
+  " c
+  NeoBundle 'vim-scripts/c.vim'
 
 
 " ========== Encording ==========
@@ -152,6 +155,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
         \}
 
 " ======== my plugin ========
-  NeoBundle "mytask"
+  " NeoBundle "mytask"
 
 filetype plugin indent on

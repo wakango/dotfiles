@@ -97,6 +97,7 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 "インクルード文のパターンを指定
 let g:neocomplcache_include_patterns = {
   \ 'cpp' : '^\s*#\s*include',
+  \ 'c' : '^\s*#\s*include',
   \ 'ruby' : '^\s*require',
   \ 'perl' : '^\s*use',
   \ 'php' : '^\s*use',
