@@ -156,7 +156,7 @@
   fizzbuzz = "!f() { seq "$@" | awk '$0=NR%15?NR%5?NR%3?$0:\"Fizz\":\"Buzz\":\"FizzBuzz\"' ;}; f"
 
 [http]
-#  sslVerify = false
+  sslVerify = false
 
 [tig "bind"]
   generic = g move-first-line

@@ -85,7 +85,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " ========== Encording ==========
   NeoBundle 'banyan/recognize_charcode.vim'
 
-
 " ==========  Utility ==========
   " vimshell : vimのshell
   NeoBundle 'Shougo/vimshell.git'
@@ -102,9 +101,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
   " NeoBundle 'tpope/vim-fugitive'
   " ステータスラインをカッコよくする
   NeoBundle 'Lokaltog/vim-powerline'
-
-" ========== fuzzy検索 ==========
-  NeoBundle 'wincent/Command-T'
 
 
 " ========== ColorSchema ==========
@@ -164,7 +160,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
     \ 'autoload' : {'filetypes' : ['php']}
   \}
 
-" ======== my plugin ========
-  " NeoBundle "mytask"
+" ========== fuzzy検索 ==========
+  NeoBundle 'wincent/Command-T'
 
 filetype plugin indent on

@@ -6,6 +6,7 @@
 "  Ref.vim
 " ----------------------------------
 let g:ref_refe_cmd = expand('~/Documents/Reference/ruby/refm-1.9.3/refe-1_9_3')
+let g:ref_phpmanual_path = expand('~/document/reference/php-chunked-xhtml')
 
 "------------------------------------
 " NERD_commenter.vim
@@ -285,3 +286,34 @@ if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+
+"------------------------------------
+" Syntastic
+"------------------------------------
+" エラー行をsignで表示する
+let g:syntastic_enable_signs = 1
+" 可能ならhighligt表示する
+let g:syntastic_enable_highlighting = 1
+
+"------------------------------------
+" php-doc.vim
+"------------------------------------
+nnoremap <Leader>d :exe PhpDoc()<CR>i
+vnoremap <Leader>d :exe PhpDocRange()<CR>
+" Wether for PHP5 code PHP4 tags should be set, like @access,... (1|0)?
+let g:pdv_cfg_php4always = 0
+let g:pdv_cfg_php4guess = 0
+
+"------------------------------------
+" vim-php-namespace
+"------------------------------------
+" \u でuse句を追加
+nnoremap <Leader>u :call PhpInsertUse()<CR>
+" \e で完全な名前空間に変換
+nnoremap <Leader>e :call PhpExpandClass()<CR>
+
+"------------------------------------
+" Command-T
+"------------------------------------
+set wildignore=cache,*.jpg,*.png,*.gif,*/inc/*,*.md
+let g:CommandTMaxFiles=15000
