@@ -79,8 +79,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
   "NeoBundle 'jondistad/vimclojure'
   " ghc-mod
   "NeoBundle 'eagletmt/ghcmod-vim'
-  " c
-  NeoBundle 'vim-scripts/c.vim'
 
 " ========== Encording ==========
   NeoBundle 'banyan/recognize_charcode.vim'
@@ -158,6 +156,14 @@ NeoBundleFetch 'Shougo/neobundle.vim'
   " phpのgetter, setterの挿入
   NeoBundleLazy 'docteurklein/php-getter-setter.vim', {
     \ 'autoload' : {'filetypes' : ['php']}
+  \}
+
+" ========== c ==========
+  NeoBundleLazy 'vim-scripts/ManPageView', {
+    \ 'autoload' : {'filetypes' : ['c']}
+  \}
+  NeoBundleLazy 'vim-scripts/c.vim', {
+    \ 'autoload' : {'filetypes' : ['c']}
   \}
 
 " ========== fuzzy検索 ==========
