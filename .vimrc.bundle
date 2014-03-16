@@ -150,13 +150,13 @@ NeoBundleFetch 'Shougo/neobundle.vim'
     \ 'autoload' : {'filetypes' : ['php']}
   \}
   " phpのuse句の自動挿入
-  NeoBundleLazy 'amaud-lb/vim-php-namespace', {
-    \ 'autoload' : {'filetypes' : ['php']}
-  \}
+  "NeoBundleLazy 'amaud-lb/vim-php-namespace', {
+  "  \ 'autoload' : {'filetypes' : ['php']}
+  "\}
   " phpのgetter, setterの挿入
-  NeoBundleLazy 'docteurklein/php-getter-setter.vim', {
-    \ 'autoload' : {'filetypes' : ['php']}
-  \}
+  "NeoBundleLazy 'docteurklein/php-getter-setter.vim', {
+  "  \ 'autoload' : {'filetypes' : ['php']}
+  "\}
 
 " ========== c ==========
   NeoBundleLazy 'vim-scripts/ManPageView', {

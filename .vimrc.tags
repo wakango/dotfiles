@@ -3,3 +3,4 @@
 "-------------------------------------------------------------------------------
 " set tags
 autocmd FileType ruby,eruby,noeruby set tags+=$HOME/tags/gtags,$HOME/tags/rtags
+autocmd FileType php set tags+=$HOME/tags/tsweb.tags
