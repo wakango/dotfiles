@@ -1,5 +1,5 @@
 "neobundle.vimで管理してるpluginを読み込む
-
+" git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 set nocompatible
 filetype plugin indent off
 if has('vim_starting')
@@ -12,6 +12,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " ========== Edit ==========
   " NERD_commenter.vim :最強コメント処理 (<Leader>c<space>でコメントをトグル)
   NeoBundle 'scrooloose/nerdcommenter.git'
+  NeoBundle 'sudo.vim'
   " surround.vim : テキストを括弧で囲む／削除する
   "NeoBundle 'tpope/surround.vim'
   " smartchr.vim : ==などの前後を整形
@@ -60,8 +61,12 @@ NeoBundleFetch 'Shougo/neobundle.vim'
   NeoBundleLazy 'StanAngeloff/php.vim', {
         \ 'autoload' : {'filetypes' : ['php']}
         \}
+  " ruby
+  NeoBundleLazy 'vim-ruby/vim-ruby', {
+        \ 'autoload' : {'filetypes': ['ruby', 'eruby', 'haml']}
+        \}
   " nginx conf
-  "NeoBundle 'nginx.vim'
+  NeoBundle 'nginx.vim'
   " markdown
   "NeoBundle 'tpope/vim-markdown'
   " coffee script
@@ -75,10 +80,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
   " ghc-mod
   "NeoBundle 'eagletmt/ghcmod-vim'
 
-
 " ========== Encording ==========
   NeoBundle 'banyan/recognize_charcode.vim'
-
 
 " ==========  Utility ==========
   " vimshell : vimのshell
@@ -97,9 +100,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
   " ステータスラインをカッコよくする
   NeoBundle 'Lokaltog/vim-powerline'
 
-" ========== fuzzy検索 ==========
-  NeoBundle 'wincent/Command-T'
-
 
 " ========== ColorSchema ==========
   " color schema 256
@@ -107,7 +107,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 
 " ========== Unite ==========
-  " unite.vim : - すべてを破壊し、すべてを繋げ - vim scriptで実装されたanythingプラグイン
   NeoBundle 'Shougo/unite.vim'
   NeoBundle 'tsukkee/unite-help'
   NeoBundle 'h1mesuke/unite-outline'
@@ -132,14 +131,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
   NeoBundleLazy 'taka84u9/vim-ref-ri', {
         \ 'autoload' : {'filetypes': ['ruby', 'eruby', 'haml']}
         \}
-  " ruby-syntax
-  NeoBundleLazy 'vim-ruby/vim-ruby', {
-        \ 'autoload' : {'filetypes': ['ruby', 'eruby', 'haml']}
-        \}
   " rubyでrequire先を補完する
   " NeoBundle 'ujihisa/neco-ruby'
-  " A neocomplcache plugin for English, using look command
-  " NeoBundle 'ujihisa/neco-look'
   " ruby用のmatchit拡張
   "NeoBundle 'ruby-matchit'
 
@@ -150,5 +143,30 @@ NeoBundleFetch 'Shougo/neobundle.vim'
   NeoBundleLazy 'basyura/unite-rails', {
         \ 'autoload' : {'filetypes': ['ruby', 'eruby', 'haml']}
         \}
+
+" ========== PHP ==========
+  " phpdocの補完
+  NeoBundleLazy 'vexxor/phpdoc.vim', {
+    \ 'autoload' : {'filetypes' : ['php']}
+  \}
+  " phpのuse句の自動挿入
+  "NeoBundleLazy 'amaud-lb/vim-php-namespace', {
+  "  \ 'autoload' : {'filetypes' : ['php']}
+  "\}
+  " phpのgetter, setterの挿入
+  "NeoBundleLazy 'docteurklein/php-getter-setter.vim', {
+  "  \ 'autoload' : {'filetypes' : ['php']}
+  "\}
+
+" ========== c ==========
+  NeoBundleLazy 'vim-scripts/ManPageView', {
+    \ 'autoload' : {'filetypes' : ['c']}
+  \}
+  NeoBundleLazy 'vim-scripts/c.vim', {
+    \ 'autoload' : {'filetypes' : ['c']}
+  \}
+
+" ========== fuzzy検索 ==========
+  NeoBundle 'wincent/Command-T'
 
 filetype plugin indent on

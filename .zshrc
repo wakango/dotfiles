@@ -1,4 +1,4 @@
-PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 # users generic .zshrc file for zsh(1)
 # PROMPT
 autoload colors
@@ -65,7 +65,7 @@ PROMPT2='> '
 ### Keybind configuration ###
     # emacs like keybind (e.x. Ctrl-a goes to head of a line and Ctrl-e goes
     #   to end of it)
-    #bindkey -v
+    bindkey -v
 
     # historical backward/forward search with linehead string binded to ^P/^N
     autoload history-search-end
@@ -172,19 +172,7 @@ function cwaf() {
 ###  Alias configuration ###
     # expand aliases before completing
     setopt complete_aliases     # aliased ls needs if file/dir completions work
-    
     alias where="command -v"
-    
-    # cas e"${OSTYPE}" in
-    # freebsd*|darwin*)
-        # alias ll="ls -l"
-        # zle -N expand-to-home-or-insert
-        # bindkey "@"  expand-to-home-or-insert
-        # ;;
-    # linux*)
-        # alias la="ls -al"
-        # ;;
-    # esac
     
     case "${OSTYPE}" in
     # MacOSX
@@ -212,58 +200,32 @@ function cwaf() {
         esac
         ;;
     esac
-
-### terminal configuration ###
-    # http://journal.mycom.co.jp/column/zsh/009/index.html
-    unset LSCOLORS
+    [ -f ~/dotfiles/.zshrc.alias ] && source ~/dotfiles/.zshrc.alias
     
-    case "${TERM}" in
-    xterm)
-        export TERM=xterm-color
-    
+    case "${OSTYPE}" in
+    # Mac(Unix)
+    darwin*)
+        [ -f ~/dotfiles/.zshrc.osx ] && source ~/dotfiles/.zshrc.osx
         ;;
-    kterm)
-        export TERM=kterm-color
-        # set BackSpace control character
-    
-        stty erase
-        ;;
-    
-    cons25)
-        unset LANG
-      export LSCOLORS=ExFxCxdxBxegedabagacad
-    
-        export LS_COLORS='di=01;32:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30'
-        zstyle ':completion:*' list-colors \
-            'di=;36;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
-        ;;
-    
-    kterm*|xterm*)
-    
-        export CLICOLOR=1
-        export LSCOLORS=ExFxCxDxBxegedabagacad
-    
-        zstyle ':completion:*' list-colors \
-            'di=36' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
-        ;;
-    
-    dumb)
-        echo "Welcome Emacs Shell"
+    # Linux
+    linux*)
+        [ -f ~/dotfiles/.zshrc.linux ] && source ~/dotfiles/.zshrc.linux
         ;;
     esac
-
-export EDITOR=vim
-export PATH=$PATH:$HOME/local/bin:/usr/local/git/bin
-export PATH=$PATH:$HOME/dotfiles/bin
-export PATH=$PATH:/sbin:/usr/local/bin
-export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
+    
+### terminal configuration ###
+    export EDITOR=vim
+    export PATH=$PATH:$HOME/local/bin:/usr/local/git/bin
+    export PATH=$PATH:$HOME/dotfiles/bin
+    export PATH=$PATH:/sbin:/usr/local/bin
+    export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
 
 expand-to-home-or-insert () {
-        if [ "$LBUFFER" = "" -o "$LBUFFER[-1]" = " " ]; then
-                LBUFFER+="~/"
-        else
-                zle self-insert
-        fi
+    if [ "$LBUFFER" = "" -o "$LBUFFER[-1]" = " " ]; then
+            LBUFFER+="~/"
+    else
+            zle self-insert
+    fi
 }
 
 # C-M-h でチートシートを表示する
@@ -313,25 +275,6 @@ bindkey "^J"  accept-line # no magic
 bindkey " "   magic-abbrev-expand-and-insert
 bindkey "."   magic-abbrev-expand-and-insert
 bindkey "^x " no-magic-abbrev-expand
-
-
-### alias設定
-#
-[ -f ~/dotfiles/.zshrc.alias ] && source ~/dotfiles/.zshrc.alias
-
-case "${OSTYPE}" in
-# Mac(Unix)
-darwin*)
-    # ここに設定
-    [ -f ~/dotfiles/.zshrc.osx ] && source ~/dotfiles/.zshrc.osx
-    ;;
-# Linux
-linux*)
-    # ここに設定
-    [ -f ~/dotfiles/.zshrc.linux ] && source ~/dotfiles/.zshrc.linux
-    ;;
-esac
-
 
 ## local固有設定
 #
