@@ -315,5 +315,5 @@ nnoremap <Leader>e :call PhpExpandClass()<CR>
 "------------------------------------
 " Command-T
 "------------------------------------
-set wildignore=cache,*.jpg,*.png,*.gif,*/inc/*,*.md
+set wildignore=cache,*.jpg,*.png,*.gif,*/inc/*,*.md,vendor
 let g:CommandTMaxFiles=15000
