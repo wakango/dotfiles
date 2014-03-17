@@ -19,6 +19,10 @@ elseif &term =~ "xterm-color"
   set t_Co=8
   set t_Sf=[3%dm
   set t_Sb=[4%dm
+elseif &term =~ "cygwin"
+  set t_Co=8
+  set t_Sf=[3%dm
+  set t_Sb=[4%dm
 endif
 
 "ポップアップメニューのカラーを設定
