@@ -37,6 +37,7 @@ command! Ev edit $MYVIMRC
 command! Rv source $MYVIMRC
 
 set helpfile=$VIMRUNTIME/doc/help.txt
+autocmd filetype vim set keywordprg=:help
 
 " ファイルタイプ判定をon
 filetype plugin on

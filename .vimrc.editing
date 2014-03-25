@@ -15,6 +15,7 @@ inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 
 " Tabキーを空白に変換
 set expandtab
+autocmd Filetype php set noexpandtab
 
 " XMLの閉タグを自動挿入
 augroup MyXML

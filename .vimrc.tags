@@ -2,4 +2,8 @@
 " タグ関連 Tags
 "-------------------------------------------------------------------------------
 " set tags
+set tags=./tags,./.tags,./nicolive.tags
 autocmd FileType ruby,eruby,noeruby set tags+=$HOME/tags/gtags,$HOME/tags/rtags
+autocmd FileType php set tags+=$HOME/workspace/web2/nicolive.tags
+command! TT !ctags --languages=PHP --php-types=c+f+i+d -f $HOME/workspace/neat_dev/nicolive.tags -a %
+autocmd FileType php set tags+=$HOME/tags/tsweb.tags
