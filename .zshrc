@@ -1,4 +1,4 @@
-PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 # users generic .zshrc file for zsh(1)
 # PROMPT
 autoload colors
