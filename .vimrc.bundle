@@ -151,4 +151,13 @@ NeoBundleFetch 'Shougo/neobundle.vim'
         \ 'autoload' : {'filetypes': ['ruby', 'eruby', 'haml']}
         \}
 
+" =========== lua ===========
+" NeoBundleLazy 'vim-scripts/lua.vim', {
+"       \ 'autoload' : {'filetypes': ['lua']}
+"       \}
+
+  NeoBundleLazy 'vim-scripts/lua-support.vim', {
+        \ 'autoload' : {'filetypes': ['lua']}
+        \}
+
 filetype plugin indent on
